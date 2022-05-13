@@ -1,8 +1,15 @@
-import React from 'react'
+import React  from 'react'
+import Users from '../components/users/Users'
+
 
 const Home = () => {
+
+
   return (
-    <div>Home</div>
+    <div>
+        <Users /> 
+        {process.env.REACT_APP_GITHUB_TOKEN}
+    </div>
   )
 }
 
