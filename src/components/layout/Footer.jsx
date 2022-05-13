@@ -1,13 +1,13 @@
 function Footer() {
-    const footerYear = new Date().getFullYear()
-  
-    return (
-      <footer className='footer p-2 bg-gray-900 text-primary-content footer-center'>
-        <div>
-          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-          className='inline-block fill-current'
- width="50" height="50" viewBox="0 0 500.000000 500.000000"
- preserveAspectRatio="xMidYMid meet">
+  const footerYear = new Date().getFullYear()
+
+  return (
+    <footer className='footer p-2 bg-black bg-opacity-60 text-primary-content footer-center'>
+      <div>
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+        className='inline-block fill-current'
+width="50" height="50" viewBox="0 0 500.000000 500.000000"
+preserveAspectRatio="xMidYMid meet">
 
 <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
 fill="#ffff" stroke="none">
@@ -96,10 +96,10 @@ l-3 -27 -217 -3 c-205 -2 -219 -1 -235 17 -31 33 -43 50 -43 57 0 3 -17 34
 </g>
 </svg>
 
-          <p>Copyright &copy;  {footerYear} A.Alaeddine </p>
-        </div>
-      </footer>
-    )
-  }
-  
-  export default Footer
+        <p>Copyright &copy;  {footerYear} A.Alaeddine </p>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer

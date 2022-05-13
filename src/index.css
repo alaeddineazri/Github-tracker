@@ -2,4 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-card-image .card.image-full:before {
+  border-radius: 0.5rem;
+  opacity: 0.45;
+}
 
+
+.app {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  background: rgb(36,41,45);
+  background: linear-gradient(36deg, rgba(36,41,45,1) 11%, rgba(124,124,124,1) 41%, rgba(74,96,103,1) 53%, rgba(41,35,24,1) 78%, rgba(36,41,45,1) 88%);
+}

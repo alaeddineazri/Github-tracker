@@ -1,37 +1,29 @@
-import axios from 'axios';
-import {createContext, useState} from 'react';
+import { createContext, useReducer } from 'react'
+import githubReducer from './GithubReducer'
 
-const GithubContext = createContext();
+const GithubContext = createContext()
 
+export const GithubProvider = ({ children }) => {
+  const initialState = {
+    users: [],
+    user: {},
+    repos: [],
+    loading: false,
+    welcome:false
+  }
 
-const GITHUB_URL =process.env.REACT_APP_API_URL
-const GITHUB_TOKEN =process.env.REACT_APP_API_TOKEN
+  const [state, dispatch] = useReducer(githubReducer, initialState)
 
-export const GithubProvider = ({children}) => {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    const fetchUsers = async () => {
-        const res = await axios(`${GITHUB_URL}/users`,{
-            headers: {
-                Authorization: `token ${GITHUB_TOKEN}`
-            }
-        });
-        setUsers(res.data);
-        setLoading(false);
-    }
-
-
-    return (
-        <GithubContext.Provider value={{
-            users,
-            loading,
-            fetchUsers
-        }}>
-            {children}
-        </GithubContext.Provider>
-    )
-
+  return (
+    <GithubContext.Provider
+      value={{
+        ...state,
+        dispatch,
+      }}
+    >
+      {children}
+    </GithubContext.Provider>
+  )
 }
 
-export default GithubContext;
+export default GithubContext
